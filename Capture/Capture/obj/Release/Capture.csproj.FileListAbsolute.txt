@@ -1,0 +1,10 @@
+c:\users\apavliuchik\documents\visual studio 2015\Projects\Capture\Capture\bin\Release\Capture.exe.config
+c:\users\apavliuchik\documents\visual studio 2015\Projects\Capture\Capture\bin\Release\Capture.exe
+c:\users\apavliuchik\documents\visual studio 2015\Projects\Capture\Capture\bin\Release\Capture.pdb
+c:\users\apavliuchik\documents\visual studio 2015\Projects\Capture\Capture\obj\Release\Capture.csprojResolveAssemblyReference.cache
+c:\users\apavliuchik\documents\visual studio 2015\Projects\Capture\Capture\obj\Release\Capture.Form1.resources
+c:\users\apavliuchik\documents\visual studio 2015\Projects\Capture\Capture\obj\Release\Capture.Properties.Resources.resources
+c:\users\apavliuchik\documents\visual studio 2015\Projects\Capture\Capture\obj\Release\Capture.csproj.GenerateResource.Cache
+c:\users\apavliuchik\documents\visual studio 2015\Projects\Capture\Capture\obj\Release\Capture.exe
+c:\users\apavliuchik\documents\visual studio 2015\Projects\Capture\Capture\obj\Release\Capture.pdb
+C:\Users\APavliuchik\documents\visual studio 2015\Projects\Capture\Capture\obj\Release\Capture.TrustInfo.xml

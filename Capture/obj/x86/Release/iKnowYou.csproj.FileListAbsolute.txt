@@ -1,0 +1,9 @@
+C:\Users\APavliuchik\Documents\Visual Studio 2015\Projects\Capture\bin\Release\WindowsApplication.exe.config
+C:\Users\APavliuchik\Documents\Visual Studio 2015\Projects\Capture\bin\Release\WindowsApplication.exe
+C:\Users\APavliuchik\Documents\Visual Studio 2015\Projects\Capture\bin\Release\WindowsApplication.pdb
+C:\Users\APavliuchik\Documents\Visual Studio 2015\Projects\Capture\obj\x86\Release\Capture.Form1.resources
+C:\Users\APavliuchik\Documents\Visual Studio 2015\Projects\Capture\obj\x86\Release\iKnowYou.Capture.Properties.Resources.resources
+C:\Users\APavliuchik\Documents\Visual Studio 2015\Projects\Capture\obj\x86\Release\iKnowYou.csproj.GenerateResource.Cache
+C:\Users\APavliuchik\Documents\Visual Studio 2015\Projects\Capture\obj\x86\Release\WindowsApplication.exe
+C:\Users\APavliuchik\Documents\Visual Studio 2015\Projects\Capture\obj\x86\Release\WindowsApplication.pdb
+C:\Users\APavliuchik\Documents\Visual Studio 2015\Projects\Capture\obj\x86\Release\iKnowYou.csprojResolveAssemblyReference.cache
