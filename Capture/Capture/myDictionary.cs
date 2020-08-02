@@ -79,8 +79,7 @@ namespace Capture
             }
             catch
             {
-                Exception ex = new Exception();
-                string msg = ex.Message;
+                throw new ApplicationException("Reading error");
             }
         }
         private List<string> formattingDictionary(List<string> l)
@@ -94,8 +93,7 @@ namespace Capture
                 }
                 catch
                 {
-                    Exception ex = new Exception();
-                    string errMsg = ex.Message;
+                    throw new ApplicationException("Formatting error");
                 }
             }
             return formatList; 
