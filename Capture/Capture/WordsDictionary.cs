@@ -9,7 +9,7 @@ namespace Capture
 {
 
     //задача класса считать файлы со словами и перенести их во внутренние ресурсы памяти
-    class myDictionary
+    class WordsDictionary
     {
         private string _path = Environment.CurrentDirectory + "\\Dictionaries";
         private string _pathEng = Environment.CurrentDirectory + "\\Dictionaries\\eng.txt";
@@ -28,7 +28,7 @@ namespace Capture
             get { return rusList; }
         }
         //конструктор класса, при вызове экземпляра будет запускаться процесс заполнения файлов листа с сортировкой
-        public myDictionary()
+        public WordsDictionary()
         {
             DirectoryInfo direct = new DirectoryInfo(_path);
             FileInfo engFile = new FileInfo(_path + "\\eng.txt");

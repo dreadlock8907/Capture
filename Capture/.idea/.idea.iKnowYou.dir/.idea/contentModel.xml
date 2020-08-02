@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="$USER_HOME$/Library/Caches/Rider2019.2/extResources" t="IncludeRecursive" />
+    <e p="$USER_HOME$/Library/Caches/Rider2019.2/resharper-host/local/Transient/ReSharperHost/v192/SolutionCaches/_.19.00" t="ExcludeRecursive" />
+    <e p="$PROJECT_DIR$" t="IncludeRecursive">
+      <e p=".vs" t="Include" />
+      <e p="bin" t="ExcludeRecursive" />
+      <e p="Capture" t="Include">
+        <e p="App.config" t="Include" />
+        <e p="bin" t="Include">
+          <e p="Capture" t="Include">
+            <e p="Capture.exe" t="Include" />
+            <e p="Capture.exe.config" t="Include" />
+            <e p="Capture.pdb" t="Include" />
+            <e p="Capture.vshost.exe" t="Include" />
+            <e p="Capture.vshost.exe.config" t="Include" />
+            <e p="Dictionaries" t="Include">
+              <e p="eng.txt" t="Include" />
+              <e p="rus.txt" t="Include" />
+            </e>
+          </e>
+          <e p="Capture.exe" t="Include" />
+          <e p="Debug" t="Include">
+            <e p="app.publish" t="Include">
+              <e p="Capture.exe" t="Include" />
+            </e>
+            <e p="Capture.exe.config" t="Include" />
+            <e p="Capture.vshost.exe" t="Include" />
+            <e p="Capture.vshost.exe.config" t="Include" />
+            <e p="Dictionaries" t="Include">
+              <e p="eng.txt" t="Include" />
+              <e p="rus.txt" t="Include" />
+            </e>
+          </e>
+          <e p="Release" t="Include">
+            <e p="app.publish" t="Include">
+              <e p="Capture.exe" t="Include" />
+            </e>
+            <e p="Capture.exe" t="Include" />
+            <e p="Capture.exe.config" t="Include" />
+            <e p="Capture.pdb" t="Include" />
+            <e p="Dictionaries" t="Include">
+              <e p="eng.txt" t="Include" />
+              <e p="rus.txt" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="Capture.csproj" t="Include" />
+        <e p="Capture.csproj.user" t="Include" />
+        <e p="Dictionaries" t="Include">
+          <e p="eng.txt" t="Include" />
+          <e p="rus.txt" t="Include" />
+        </e>
+        <e p="favicon.ico" t="Include" />
+        <e p="Form1.cs" t="Include" />
+        <e p="Form1.Designer.cs" t="Include" />
+        <e p="Form1.resx" t="Include" />
+        <e p="obj" t="Include">
+          <e p="Debug" t="Include">
+            <e p="Capture.csproj.FileListAbsolute.txt" t="Include" />
+            <e p="Capture.csproj.GenerateResource.Cache" t="Include" />
+            <e p="Capture.csprojResolveAssemblyReference.cache" t="Include" />
+            <e p="Capture.exe" t="Include" />
+            <e p="Capture.Form1.resources" t="Include" />
+            <e p="Capture.pdb" t="Include" />
+            <e p="Capture.Properties.Resources.resources" t="Include" />
+            <e p="Capture.TrustInfo.xml" t="Include" />
+            <e p="DesignTimeResolveAssemblyReferences.cache" t="Include" />
+            <e p="DesignTimeResolveAssemblyReferencesInput.cache" t="Include" />
+            <e p="TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" t="Include" />
+            <e p="TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" t="Include" />
+            <e p="TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" t="Include" />
+            <e p="TempPE" t="Include">
+              <e p="Properties.Resources.Designer.cs.dll" t="Include" />
+            </e>
+          </e>
+          <e p="Release" t="Include">
+            <e p="Capture.csproj.FileListAbsolute.txt" t="Include" />
+            <e p="Capture.csproj.GenerateResource.Cache" t="Include" />
+            <e p="Capture.csprojResolveAssemblyReference.cache" t="Include" />
+            <e p="Capture.exe" t="Include" />
+            <e p="Capture.Form1.resources" t="Include" />
+            <e p="Capture.pdb" t="Include" />
+            <e p="Capture.Properties.Resources.resources" t="Include" />
+            <e p="Capture.TrustInfo.xml" t="Include" />
+            <e p="TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" t="Include" />
+            <e p="TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" t="Include" />
+            <e p="TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" t="Include" />
+          </e>
+        </e>
+        <e p="processingString.cs" t="Include" />
+        <e p="Program.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="app.manifest" t="Include" />
+          <e p="AssemblyInfo.cs" t="Include" />
+          <e p="Resources.Designer.cs" t="Include" />
+          <e p="Resources.resx" t="Include" />
+          <e p="Settings.Designer.cs" t="Include" />
+          <e p="Settings.settings" t="Include" />
+        </e>
+        <e p="WordsDictionary.cs" t="Include" />
+      </e>
+      <e p="favicon.ico" t="Include" />
+      <e p="iKnowYou.csproj" t="IncludeRecursive" />
+      <e p="obj" t="ExcludeRecursive" />
+      <e p="packages" t="ExcludeRecursive" />
+    </e>
+  </component>
+</project>

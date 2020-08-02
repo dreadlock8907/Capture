@@ -8,35 +8,69 @@ using System.Windows.Forms;
 
 namespace Capture
 {
-    public class processingString
+    public class CharsMap
     {
-        //словарь символов будет
-        private string eng = "qwertyuiop[]asdfghjkl;'zxcvbnm,. !?=-";
-        private string rus = "йцукенгшщзхъфывапролджэячсмитьбю !?=-";
+        static CharsMap _self;
 
-        //а вот тут с помощью словаря - будем использовать по ключу аглицкие символы и соответствующее им значение русских
-        Dictionary<char, char> dictEngToRus = new Dictionary<char, char>();
-        Dictionary<char, char> dictRusToEng = new Dictionary<char, char>();
-
-        myDictionary mD = new myDictionary();
-
-        //вот он, конструктор-то для чегооо    
-        public processingString()
+        public static CharsMap self
         {
-            //запилим строки в массив символов 
+            get
+            {
+                if(_self == null)
+                    _self = new CharsMap();
+                return _self;
+            }
+        }
+
+        //словарь символов будет
+        const string eng= "qwertyuiop[]asdfghjkl;'zxcvbnm,. !?=-";
+        const string rus = "йцукенгшщзхъфывапролджэячсмитьбю !?=-";
+        
+        //а вот тут с помощью словаря - будем использовать по ключу аглицкие символы и соответствующее им значение русских
+        Dictionary<char, char> eng2rus;
+        Dictionary<char, char> rus2eng;
+
+        CharsMap()
+        {
             char[] engList = eng.ToCharArray();
             char[] rusList = rus.ToCharArray();
 
             //добавим элементы массивов в словари(с - ключ, n - значение)
             for (int i = 0; i < engList.Length; i++)
             {
-                dictEngToRus.Add(engList[i], rusList[i]);
-                dictRusToEng.Add(rusList[i], engList[i]);
+                eng2rus.Add(engList[i], rusList[i]);
+                rus2eng.Add(rusList[i], engList[i]);
             }
         }
 
+        public char MatchEngChar(char rus)
+        {
+            if(rus2eng.ContainsKey(rus))
+                return rus2eng[rus];
+            return ' ';
+        }
+
+        public char MatchRusChar(char eng)
+        {
+            if(eng2rus.ContainsKey(eng))
+                return eng2rus[eng];
+            return ' ';
+        }
+        
+    }
+    
+    
+    public class processingString
+    {
+        WordsDictionary words_dict;
+    
+        public processingString()
+        {
+            words_dict = new WordsDictionary();
+        }
+
         //собственно, сам обработчик
-        public string processStr(string str, bool isRus, bool isAuto)
+        public string processStr(string str, bool is_rus, bool is_auto)
         {
             List<char> outList = new List<char>(); // результат собираем в лист
 
@@ -47,7 +81,7 @@ namespace Capture
             List<string> listOfStr = new List<string>();
             
             //если активирована галка...
-            if (isAuto)
+            if (is_auto)
             {
                 //если английская раскладка
                 if (InputLanguage.CurrentInputLanguage.Culture.EnglishName == "English (United States)")
@@ -59,37 +93,29 @@ namespace Capture
 
                         foreach (string st in mystr)
                         {
-                            if (mD.English.Contains(st))
+                            if (words_dict.English.Contains(st))
                             {
                                 sB.Append(st + ' ');
                             }
                             else
                             {
-                                
                                 foreach (char c in st)
                                 {
                                     if ((int)c > 1000)
                                         sB.Append(c);
                                     else
                                     {
-                                        foreach (KeyValuePair<char, char> kvp in dictEngToRus)
-                                        {
-                                            if (c == kvp.Key)
-                                            {
-                                                sB.Append(kvp.Value);
-                                            }
-                                        }
+                                        sB.Append(CharsMap.self.MatchEngChar(c));
                                     }
                                 }
                                 sB.Append(" ");
 
                             }
                         }
-                        return sB.ToString();
                     }
                     else
                     {
-                        if (mD.English.Contains(str))
+                        if (words_dict.English.Contains(str))
                         {
                             return str;
                         }
@@ -100,17 +126,8 @@ namespace Capture
                                 if ((int)c > 1000)
                                     sB.Append(c);
                                 else
-                                {
-                                    foreach (KeyValuePair<char, char> kvp in dictEngToRus)
-                                    {
-                                        if (c == kvp.Key)
-                                        {
-                                            sB.Append(kvp.Value);
-                                        }
-                                    }
-                                }
+                                    sB.Append(CharsMap.self.MatchEngChar(c));
                             }
-                            //return sB.ToString();
                         }
                     }
 
@@ -125,7 +142,7 @@ namespace Capture
 
                         foreach (string st in mystr)
                         {
-                            if (mD.Russian.Contains(st))
+                            if (words_dict.Russian.Contains(st))
                             {
                                 sB.Append(st + ' ');
                             }
@@ -137,24 +154,14 @@ namespace Capture
                                     if ((int)c < 1000)
                                         sB.Append(c);
                                     else
-                                    {
-                                        foreach (KeyValuePair<char, char> kvp in dictRusToEng)
-                                        {
-                                            if (c == kvp.Key)
-                                            {
-                                                sB.Append(kvp.Value);
-                                            }
-                                        }
-                                    }
+                                        sB.Append(CharsMap.self.MatchRusChar(c));
                                 }
                                 sB.Append(" ");
 
                             }
                         }
-                        //return sB.ToString();
                     }
                 }
-                return sB.ToString();
             }
             //если отключена автоматическая галка
             else
@@ -163,35 +170,19 @@ namespace Capture
                 {
                     foreach (char c in charArr) //во всех парах ключ-значение ищем совпадение
                     {
-                        if (isRus) //проверка на то, русский ли режим
+                        if (is_rus) //проверка на то, русский ли режим
                         {
                             if ((int)c > 1000) //если символ и так русский, то просто добавляем в лист
                                 outList.Add(c);
                             else //иначе ищем значение в паре в словаре
-                            {
-                                foreach (KeyValuePair<char, char> kvp in dictEngToRus)
-                                {
-                                    if (c == kvp.Key)
-                                    {
-                                        outList.Add(kvp.Value);
-                                    }
-                                }
-                            }
+                                outList.Add(CharsMap.self.MatchEngChar(c));
                         }
                         else //если английский, то ищем в словаре, значит, английском
                         {
                             if ((int)c < 1000) //если символ и так английский, то просто добавляем в лист
                                 outList.Add(c);
                             else //иначе ищем значение в паре в словаре
-                            {
-                                foreach (KeyValuePair<char, char> kvp in dictRusToEng)
-                                {
-                                    if (c == kvp.Key)
-                                    {
-                                        outList.Add(kvp.Value);
-                                    }
-                                }
-                            }
+                                outList.Add(CharsMap.self.MatchRusChar(c));
                         }
                     }
                 }
@@ -205,11 +196,10 @@ namespace Capture
                 {
                     sB.Append(c);
                 }
-                return sB.ToString();
             }
 
-                return sB.ToString();
-            }
+            return sB.ToString();
+        }
         
 
         //метод проверит введенные символы в строке и посчитает на какой язык перевести
